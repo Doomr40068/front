@@ -5,14 +5,7 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   
   // Добавьте эту секцию:
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'http://localhost:8000/api/:path*',
-      },
-    ];
-  },
+
 };
 
 export default nextConfig;

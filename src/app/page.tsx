@@ -5,14 +5,7 @@ import { BiLogoVk } from "react-icons/bi";
 import "./home.css";
 import { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+
 
 export default function Home() {
   const [posts, setPosts] = useState<any[]>([]);
@@ -313,43 +306,7 @@ export default function Home() {
       </div>
       <div className="!mt-[100px]">
         <h1 className="main_award">Нам доверяют</h1>
-        <Carousel
-          opts={{
-            align: "start",
-          }}
-          className="w-full"
-        >
-          <CarouselContent>
-            {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index} className="basis-1/2 lg:basis-1/3">
-                <div className="p-1">
-                  <Card className="bg-[#EDEEFF] !mx-5 ">
-                    <CardContent className="flex flex-col aspect-square items-center justify-center !p-6">
-                      <div className=" w-full flex justify-between h-[20%] ">
-                        <h1 className="w-[50%]">Калькулятор парикмахера</h1>
-                        <button className="h-[40px] w-[40px] ">📃</button>
-                      </div>
-                      <div className="bg-white !p-4 h-[60%] w-full ">
-                        <span className="text-3xl font-semibold">
-                          {index + 1}
-                        </span>
-                        <div className="flex items-center gap-2">
-                          <img src="" alt="Ava" />
-                          <div>
-                            name <br />
-                            Roole
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="!bg-[#EDEEFF]" />
-          <CarouselNext className="!bg-[#EDEEFF]" />
-        </Carousel>
+        
       </div>
       <div className="flex rounded-4xl gap-[20px] !pt-[45px] !px-[40px]  !mt-[120px] !mb-[100px] bg-[#6ECCFF] bg-gradient-to-r from-[#70D0FF] to-[#2D41F9] ">
         <img
@@ -381,32 +338,49 @@ export default function Home() {
             <div className="flex flex-col gap-[8px]">
               <img className="rounded-4xl" src="" alt="News img" />
               <h1 className="font-bold text-3xl ">title!!!</h1>
-              <h3 className="font-['Wix_Madefor_Text'] text-[18px]" >description</h3>
+              <h3 className="font-['Wix_Madefor_Text'] text-[18px]">
+                description
+              </h3>
             </div>
             <div className="flex gap-4 items-center">
               <h3>📅</h3>
-              <h3 className="text-[#6F7998] text-[14px] font-['Wix_Madefor_Text']" >01.01.2001</h3>
+              <h3 className="text-[#6F7998] text-[14px] font-['Wix_Madefor_Text']">
+                01.01.2001
+              </h3>
             </div>
           </div>
         </div>
-        <button className="!mt-[48px] !text-[14px] !px-8 text-white !bg-blue-700" >Загрузить ещё</button>
+        <button className="!mt-[48px] !text-[14px] !px-8 text-white !bg-blue-700">
+          Загрузить ещё
+        </button>
       </div>
-      <div className="!mt-[120px] !pt-[20px] !px-[80px] h-[600px] items-center gap-[20px] text-white flex flex-col rounded-4xl bg-gradient-to-t from-[#060B82] to-[#0B0D20]" >
-            <h1 className=" text-4xl font-bold " >Мы всегда ищем новые<br />таланты в нашу команду</h1>
-            <div className="flex">
-              <div className="!w-[40%] items-end flex flex-col !mr-[30px] " >
-                <img src="" alt="backend img"/>
-              </div>
-              <div className="!w-[50%] flex flex-col gap-[5px]" >
-                  <h3 className="text-[12px] font-light font-['Wix_Madefor_Text']  " >Работая в нашей команде, каждый день ты будешь делать и узнавать что-то новое и интересное. Крутые знакомства, долгосрочные проекты и необычные задачи – то, что ждет тебя в Киберии</h3>
-                  <div className="flex text-[12px] font-['Wix_Madefor_Text'] font-light gap-2 items-center " >
-                    <button className="!bg-blue-600 !px-[35px]" >Присоединяйся</button>
-                    <h3 className="underline decoration-blue-600" >Вакансии на hh.ru</h3>
-                  </div>
-                  <img className="!mt-[40px]" src="" alt="frontend img"/>
-              </div>
+      <div className="!mt-[120px] !pt-[20px] !px-[80px] h-[600px] items-center gap-[20px] text-white flex flex-col rounded-4xl bg-gradient-to-t from-[#060B82] to-[#0B0D20]">
+        <h1 className=" text-4xl font-bold ">
+          Мы всегда ищем новые
+          <br />
+          таланты в нашу команду
+        </h1>
+        <div className="flex">
+          <div className="!w-[40%] items-end flex flex-col !mr-[30px] ">
+            <img src="" alt="backend img" />
+          </div>
+          <div className="!w-[50%] flex flex-col gap-[5px]">
+            <h3 className="text-[12px] font-light font-['Wix_Madefor_Text']  ">
+              Работая в нашей команде, каждый день ты будешь делать и узнавать
+              что-то новое и интересное. Крутые знакомства, долгосрочные проекты
+              и необычные задачи – то, что ждет тебя в Киберии
+            </h3>
+            <div className="flex text-[12px] font-['Wix_Madefor_Text'] font-light gap-2 items-center ">
+              <button className="!bg-blue-600 !px-[35px]">Присоединяйся</button>
+              <h3 className="underline decoration-blue-600">
+                Вакансии на hh.ru
+              </h3>
             </div>
+            <img className="!mt-[40px]" src="" alt="frontend img" />
+          </div>
+        </div>
       </div>
+      
     </main>
   );
 }

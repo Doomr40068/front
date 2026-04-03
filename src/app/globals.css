@@ -55,7 +55,7 @@
 
 
 body {
-  padding: 20px 58px;
+  padding: 10px 10px;
 }
 
 header{
@@ -102,6 +102,16 @@ transition: 1000ms;;
 }
 
 .telegram-icon:hover {
+  fill: url(#telegram-gradient);
+  transform: scale(1.1);
+}
+
+.telegram-dark{
+      fill: white;
+transition: 1000ms;;
+}
+
+.telegram-dark:hover {
   fill: url(#telegram-gradient);
   transform: scale(1.1);
 }
