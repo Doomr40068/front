@@ -2,8 +2,7 @@ class ApiClient {
     private baseUrl: string;
 
     constructor() {
-        // Жестко указываем URL бэкенда
-           this.baseUrl = '';
+        this.baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
     }
 
     private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
@@ -15,7 +14,7 @@ class ApiClient {
                 headers: { 'Content-Type': 'application/json' },
                 ...options,
             });
-            
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

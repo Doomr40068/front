@@ -3,10 +3,10 @@ import { BiLogoVk } from 'react-icons/bi';
 
 export function MainHeader() {
     return (
-        <header className="flex items-center justify-between p-5 mb-5 font-semibold">
+        <header className="flex items-center justify-between !p-5 !mb-5 font-semibold  ">
             <h1 className="text-2xl font-bold">LOGO</h1>
 
-            <ul className="flex space-x-4">
+            <ul className="flex space-x-4 gap-1 ">
                 <li className="hover:bg-gradient-to-r hover:from-[#2D41F9] hover:via-[#9E70FF] hover:to-[#36CFFF] hover:bg-clip-text hover:text-transparent cursor-pointer">
                     Проекты
                 </li>

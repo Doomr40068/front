@@ -1,4 +1,3 @@
-
 import type { Award } from '@/entities/award/model/types';
 import { BannerBlock } from '../../widgets/banner/BannerBlock';
 import { OurProject } from '../../widgets/our-project/OurProject';
@@ -20,8 +19,8 @@ export function HomeView({ awards }: HomeClientProps) {
             <AwardsCompany awards={awards} />
             <OurProject awards={awards} />
             <OurCommand />
-            <div className="mt-[100px]">
-                <h1 className="text-center text-4xl font-bold mb-12">Нам доверяют</h1>
+            <div className="!mt-[100px]">
+                <h1 className="text-center text-4xl font-bold !mb-12">Нам доверяют</h1>
                 <OrdersCarousel awards={awards} />
             </div>
             <ContactsBanner />

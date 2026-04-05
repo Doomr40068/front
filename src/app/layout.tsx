@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={unboundedSemiBold.className}>
-            <body>
+            <body className="!p-5">
                 <Header />
                 {children}
                 <Footer />

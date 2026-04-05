@@ -1,27 +1,30 @@
-import { Award } from '@/entities/award/model/types';  
+import { Award } from '@/entities/award/model/types';
 import Image from 'next/image';
 
 interface AwardsCompanyProps {
-    awards: Award[];  
+    awards: Award[];
 }
 
-export function AwardsCompany({awards}: AwardsCompanyProps) {
-
+export function AwardsCompany({ awards }: AwardsCompanyProps) {
     return (
         <div>
-            <h1 className="main_award">Награды студии</h1>
-            <div className="awards">
-                {awards  &&
-                    awards .map((el) => (
-                        <div key={el?.id} className="award_card">
+            <h1 className="text-center text-[40px] font-bold mb-12 ">Награды студии</h1>
+            <div className="grid grid-cols-3 gap-10">
+                {awards &&
+                    awards.map((el) => (
+                        <div key={el?.id} className="flex mb-5 gap-5">
                             <Image
-                                className="img_award"
+                                className="w-[100] h-[100] rounded-[50%] object-cover"
                                 src={el?.award_icon.original_url}
                                 alt="award"
+                                width={100}
+                                height={100}
                             />
                             <div>
-                                <h1 className="title_award">{el?.title}</h1>
-                                <h3 className="des_award">{el?.description}</h3>
+                                <h1 className="font-bold text-2xl ">{el?.title}</h1>
+                                <h3 className="font-['Wix_Madefor_Text'] text-[16] ">
+                                    {el?.description}
+                                </h3>
                             </div>
                         </div>
                     ))}

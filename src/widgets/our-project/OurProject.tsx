@@ -8,16 +8,16 @@ interface AwardsCompanyProps {
 
 export function OurProject({ awards }: AwardsCompanyProps) {
     return (
-        <div className="flex flex-col items-center !mb-30">
-            <h1 className="main_award"> Наши проекты </h1>
+        <div className="flex flex-col items-center mb-30">
+            <h1 className="text-center text-[40px] font-bold !mb-12 "> Наши проекты </h1>
             <Tabs defaultValue="webservices" className="w-full">
-                <TabsList className="flex flex-nowrap w-4/5 gap-3 bg-transparent p-0 overflow-x-auto overflow-y-hidden no-scrollbar">
+                <TabsList className="flex font-['Wix_Madefor_Text'] text-[15px] flex-nowrap w-4/5 gap-3 bg-transparent  overflow-x-auto overflow-y-hidden no-scrollbar">
                     <TabsTrigger
                         value="webservices"
                         className="
                     hover:bg-gradient-to-r from-[#2D41F9] via-[#9E70FF] to-[#36CFFF]
                     hover:!text-white
-                    px-6 py-2.5
+                    !px-6 !py-2.5
                     rounded-full
                     !bg-[#EDEEFF]
                     !text-black
@@ -31,7 +31,7 @@ export function OurProject({ awards }: AwardsCompanyProps) {
                         className="
                       hover:bg-gradient-to-r from-[#2D41F9] via-[#9E70FF] to-[#36CFFF]
                     hover:!text-white
-                    px-6 py-2.5
+                    !px-6 !py-2.5
                     rounded-full
                     !bg-[#EDEEFF]
                     !text-black
@@ -45,7 +45,7 @@ export function OurProject({ awards }: AwardsCompanyProps) {
                         className="
                     hover:bg-gradient-to-r from-[#2D41F9] via-[#9E70FF] to-[#36CFFF]
                     hover:!text-white
-                    px-6 py-2.5
+                    !px-6 !py-2.5
                     rounded-full
                     !bg-[#EDEEFF]
                     !text-black
@@ -59,7 +59,7 @@ export function OurProject({ awards }: AwardsCompanyProps) {
                         className="
                     hover:bg-gradient-to-r from-[#2D41F9] via-[#9E70FF] to-[#36CFFF]
                     hover:!text-white
-                    px-6 py-2.5
+                    !px-6 !py-2.5
                     rounded-full
                     !bg-[#EDEEFF]
                     !text-black
@@ -73,7 +73,7 @@ export function OurProject({ awards }: AwardsCompanyProps) {
                         className="
                     hover:bg-gradient-to-r from-[#2D41F9] via-[#9E70FF] to-[#36CFFF]
                     hover:!text-white
-                    px-6 py-2.5
+                    !px-6 !py-2.5
                     rounded-full
                     !bg-[#EDEEFF]
                     !text-black
@@ -87,7 +87,7 @@ export function OurProject({ awards }: AwardsCompanyProps) {
                         className="
                     hover:bg-gradient-to-r from-[#2D41F9] via-[#9E70FF] to-[#36CFFF]
                     hover:!text-white
-                    px-6 py-2.5
+                    !px-6 !py-2.5
                     rounded-full
                     !bg-[#EDEEFF]
                     !text-black
@@ -101,7 +101,7 @@ export function OurProject({ awards }: AwardsCompanyProps) {
                         className="
                     hover:bg-gradient-to-r from-[#2D41F9] via-[#9E70FF] to-[#36CFFF]
                     hover:!text-white
-                    px-6 py-2.5
+                    !px-6!py-2.5
                     rounded-full
                     !bg-[#EDEEFF]
                     !text-black

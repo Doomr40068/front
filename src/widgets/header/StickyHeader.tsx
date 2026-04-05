@@ -14,17 +14,31 @@ export function StickyHeader({ show }: StickyHeaderProps) {
         ${show ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
       `}
         >
-            <header className="bg-[#0B0D20] rounded-b-[15px] text-white flex items-center justify-between p-3">
+            <header className="bg-[#0B0D20] rounded-b-[15px] text-white flex items-center justify-between !p-5">
                 <h1 className="text-xl font-bold">LOGO</h1>
 
                 <ul className="flex space-x-4 text-sm">
-                    <li className="hover:text-gray-300 cursor-pointer">Проекты</li>
-                    <li className="hover:text-gray-300 cursor-pointer">Услуги</li>
-                    <li className="hover:text-gray-300 cursor-pointer">О компании</li>
-                    <li className="hover:text-gray-300 cursor-pointer">Карьера</li>
-                    <li className="hover:text-gray-300 cursor-pointer">Блог</li>
-                    <li className="hover:text-gray-300 cursor-pointer">Новости</li>
-                    <li className="hover:text-gray-300 cursor-pointer">Контакты</li>
+                    <li className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                        Проекты
+                    </li>
+                    <li className=" text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                        Услуги
+                    </li>
+                    <li className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                        О компании
+                    </li>
+                    <li className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                        Карьера
+                    </li>
+                    <li className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                        Блог
+                    </li>
+                    <li className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                        Новости
+                    </li>
+                    <li className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                        Контакты
+                    </li>
                 </ul>
 
                 <ul className="flex space-x-3 text-2xl Icons">

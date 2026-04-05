@@ -4,7 +4,7 @@ import { BiLogoVk } from 'react-icons/bi';
 
 export function ContactsBanner() {
     return (
-        <div className="flex rounded-4xl gap-[20px] !pt-[45px] !px-[40px]  !mt-[120px] !mb-[100px] bg-[#6ECCFF] bg-gradient-to-r from-[#70D0FF] to-[#2D41F9] ">
+        <div className="flex rounded-4xl gap-[20] !pt-[45] !px-[40] !mt-[120] !mb-[100] bg-[#6ECCFF] bg-gradient-to-r from-[#70D0FF] to-[#2D41F9] ">
             <Image
                 className="!w-[30%]"
                 src="https://avatars.mds.yandex.net/i?id=47d1a0286b5c698e131ab46dee8fdbfe1f323178-5322230-images-thumbs&n=13"

@@ -11,13 +11,13 @@ const wixMadefor = Wix_Madefor_Text({
 function Footer() {
     return (
         <footer className={wixMadefor.className}>
-            <div id="fott-logo">
-                <h1 className="logo">LOGO</h1>
-                <h6 className="under_footer">
+            <div className="flex flex-col justify-between">
+                <h1 className="px-5 py-2.5">LOGO</h1>
+                <h6 className="w-[70%] text-[16px] mb-2.5 ">
                     © 2026 ООО «Киберия», номер в реестре аккредитованных IT-компаний: 53278
                 </h6>
             </div>
-            <div className="ul_footer">
+            <div className="flex flex-col justify-between w-1/4">
                 <ul>
                     <li>Проекты</li>
                     <li>Услуги</li>
@@ -27,21 +27,21 @@ function Footer() {
                     <li>Новости</li>
                     <li>Контакты</li>
                 </ul>
-                <h6 className="under_footer">Реквизиты компании</h6>
+                <h6 className="w-[70%] text-[16px] mb-2.5">Реквизиты компании</h6>
             </div>
-            <div className="Call">
+            <div className="flex flex-col justify-between">
                 <div>
-                    <h4 className="feeback">+7 960 959 18 66</h4>
-                    <h4 className="feeback">hello@cyberia.studio</h4>
-                    <h6 className="under_footer">г.Барнул, ул.Ярных, 35, оф.10</h6>
-                    <div className="Icons">
+                    <h4 className="text-2xl font-bold">+7 960 959 18 66</h4>
+                    <h4 className="text-2xl font-bold">hello@cyberia.studio</h4>
+                    <h6 className="w-[70%] text-[16px] mb-2.5">г.Барнул, ул.Ярных, 35, оф.10</h6>
+                    <div className="flex flex-row text-3xl">
                         <a href="https://web.telegram.org/a/">
-                            <RiTelegramLine className="telegram-icon" />
+                            <RiTelegramLine className="fill-black duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
                         </a>
-                        <BiLogoVk className="telegram-icon" />
+                        <BiLogoVk className="fill-black duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
                     </div>
                 </div>
-                <h6 className="under_footer">Политика конфиденциальности</h6>
+                <h6 className="w-[70%] text-[16px] mb-2.5">Политика конфиденциальности</h6>
             </div>
         </footer>
     );
