@@ -1,4 +1,4 @@
-import { Award } from '@/entities/awards/model/types';  
+import { Award } from '@/entities/award/model/types';  
 import Image from 'next/image';
 
 interface AwardsCompanyProps {

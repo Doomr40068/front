@@ -1,5 +1,5 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/shared/ui/tabs';
-import type { Award } from '@/entities/awards/model/types';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/shared/ui/tabs/tabs';
+import type { Award } from '@/entities/award/model/types';
 import Image from 'next/image';
 
 interface AwardsCompanyProps {

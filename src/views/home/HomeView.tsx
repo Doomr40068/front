@@ -1,13 +1,13 @@
 
-import type { Award } from '@/entities/awards/model/types';
+import type { Award } from '@/entities/award/model/types';
 import { BannerBlock } from '../../widgets/banner/BannerBlock';
 import { OurProject } from '../../widgets/our-project/OurProject';
 import { OurCommand } from '../../widgets/our-command/OurCommand';
-import { OrdersCarousel } from '@/entities/awards/ui/OrdersCarousel';
+import { OrdersCarousel } from '@/entities/award/ui/OrdersCarousel';
 import { ContactsBanner } from '../../widgets/contacts-banner/ContactsBanner';
 import { News } from '../../widgets/news/News';
 import { Vacantion } from '../../widgets/vacancy/Vacancy';
-import { AwardsCompany } from '../../widgets/awards-compony/AwardsCompany';
+import { AwardsCompany } from '../../widgets/awards-company/AwardsCompany';
 
 interface HomeClientProps {
     awards: Award[];
