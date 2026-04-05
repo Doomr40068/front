@@ -1,9 +1,9 @@
 
 import { awardAPI } from "@/entities/awards/api/awards-api";
-import HomeClient from "@/views/home/HomeClient";
+import { HomeView } from "@/views/home/HomeView";
 
 
 export default async function HomePage() {
     const awards = await awardAPI.getAwards();
-    return <HomeClient awards={awards} />;
+    return <HomeView awards={awards} />;
 }

@@ -1,20 +1,19 @@
-"use client";
 
 import type { Award } from '@/entities/awards/model/types';
-import { BannerBlock } from './BannerBlcok';
-import { OurProject } from './OurProject';
-import { OurCommand } from './OurCommand';
+import { BannerBlock } from '../../widgets/banner/BannerBlock';
+import { OurProject } from '../../widgets/our-project/OurProject';
+import { OurCommand } from '../../widgets/our-command/OurCommand';
 import { OrdersCarousel } from '@/entities/awards/ui/OrdersCarousel';
-import { ContactsBanner } from './ContactsBanner';
-import { News } from './News';
-import { Vacantion } from './Vacantion';
-import { AwardsCompany } from './AwardsCompany';
+import { ContactsBanner } from '../../widgets/contacts-banner/ContactsBanner';
+import { News } from '../../widgets/news/News';
+import { Vacantion } from '../../widgets/vacancy/Vacancy';
+import { AwardsCompany } from '../../widgets/awards-compony/AwardsCompany';
 
 interface HomeClientProps {
     awards: Award[];
 }
 
-export function HomeClient({ awards }: HomeClientProps) {
+export function HomeView({ awards }: HomeClientProps) {
     return (
         <main>
             <BannerBlock />

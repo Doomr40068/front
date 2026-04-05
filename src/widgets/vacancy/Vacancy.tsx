@@ -1,4 +1,4 @@
-import { FunctionSquare } from 'lucide-react';
+
 
 export function Vacantion() {
     return (
@@ -10,7 +10,6 @@ export function Vacantion() {
             </h1>
             <div className="flex">
                 <div className="!w-[40%] items-end flex flex-col !mr-[30px] ">
-                    {/* Изображение будет добавлено позже */}
                     <div className="w-full h-40 bg-gray-700 rounded-lg flex items-center justify-center text-gray-400">
                         Backend img
                     </div>
