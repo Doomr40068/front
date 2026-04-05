@@ -1,11 +1,11 @@
-export interface Image{
+export interface Image {
     uuid: string;
     mime_type: string;
     original_url: string;
     preview_url: string;
 }
 
-export interface Project{
+export interface Project {
     id: number;
     slug: string;
     title: string;
@@ -20,16 +20,16 @@ export interface Project{
     is_case: boolean;
 }
 
-export interface Award{
+export interface Award {
     id: number;
     title: string;
     description: string;
     award_image: Image;
-    awaed_icon: Image;
+    award_icon: Image;
     project: Project;
 }
 
-export interface AwardResponse{
+export interface AwardResponse {
     message: string;
     data: {
         awards: Award[];

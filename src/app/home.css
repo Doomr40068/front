@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
 
-.bannerblock{
-    background: linear-gradient(
-        90deg,
-        #2D41F9,
-        #1B2793
-    );
+.bannerblock {
+    background: linear-gradient(90deg, #2d41f9, #1b2793);
     max-height: 398px;
     border-radius: 25px;
     padding: 60px;
@@ -13,101 +9,101 @@
     margin-bottom: 130px;
 }
 
-#bannertext{
+#bannertext {
     width: 40%;
     margin-bottom: 10px;
     font-size: 22px;
 }
 
-button{
+button {
     background-color: black;
     border-radius: 25px;
     padding: 8px 13px;
     font-size: 12px;
-    font-family: "Wix Madefor Text", sans-serif;
+    font-family: 'Wix Madefor Text', sans-serif;
 }
 
-#raiting{
+#raiting {
     font-size: 37px;
     margin: -12px 0px;
-    background: linear-gradient(70deg, #2D41F9, #9ACBFF);
+    background: linear-gradient(70deg, #2d41f9, #9acbff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
-#place{
+#place {
     display: flex;
     background-color: black;
     gap: 20px;
     padding: 10px 20px;
-    width: 32% ;
+    width: 32%;
     border-radius: 36px;
     align-items: center;
     rotate: 80;
     transform: rotate(355deg);
 }
 
-#place h4{
-    font-family: "Wix Madefor Text", sans-serif;
+#place h4 {
+    font-family: 'Wix Madefor Text', sans-serif;
     font-size: 14px;
 }
 
-#place h3{
-    background: linear-gradient(70deg, #2D41F9, #9ACBFF);
+#place h3 {
+    background: linear-gradient(70deg, #2d41f9, #9acbff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
-#bottom{
+#bottom {
     display: flex;
     gap: 10px;
 }
 
-#buttonsblock{
+#buttonsblock {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.main_award{
+.main_award {
     text-align: center;
     font-size: 40px;
     font-weight: bolder;
     margin-bottom: 48px;
 }
 
-.awards{
+.awards {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
 }
 
-.award_card{
-display: flex;
-margin-bottom: 20px;
-gap: 20px;
+.award_card {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 20px;
 }
 
-.img_award{
+.img_award {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.title_award{
+.title_award {
     font-weight: bolder;
     font-size: 24px;
 }
 
-.des_award{
-    font-family: "Wix Madefor Text", sans-serif;
+.des_award {
+    font-family: 'Wix Madefor Text', sans-serif;
     font-size: 16px;
 }
 
-.tabs{
-background-color: #EDEEFF ;
-color: white;
+.tabs {
+    background-color: #edeeff;
+    color: white;
 }
