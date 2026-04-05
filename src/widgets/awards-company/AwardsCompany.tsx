@@ -21,7 +21,7 @@ export function AwardsCompany({ awards }: AwardsCompanyProps) {
                                 height={100}
                             />
                             <div>
-                                <h1 className="font-bold text-2xl ">{el?.title}</h1>
+                                <h2 className="font-bold text-2xl ">{el?.title}</h2>
                                 <h3 className="font-['Wix_Madefor_Text'] text-[16] ">
                                     {el?.description}
                                 </h3>

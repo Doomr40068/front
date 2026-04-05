@@ -11,54 +11,54 @@ export function OurCommand() {
                 <button className="text-white !mt-5 !px-7 !py-3 !text-[15px]">Подробнее</button>
                 <div className="grid grid-cols-2 grid-rows-2 !mt-[60px] gap-6">
                     <div>
-                        <h1
+                        <h3
                             className="text-7xl 
                            font-bold bg-gradient-to-br
                            from-[#6CA7FF] to-[#2D41F9] 
                            bg-clip-text text-transparent "
                         >
                             40
-                        </h1>
+                        </h3>
                         <h3 className="font-['Wix_Madefor_Text'] leading-none font-bold ">
                             штатных сотрудников:аналитики, дизайнеры, разработчики, тестировщики,
                             девопсы
                         </h3>
                     </div>
                     <div>
-                        <h1
+                        <h3
                             className="text-7xl 
                            font-bold bg-gradient-to-br
                            from-[#8B61E5] to-[#6720FF] 
                            bg-clip-text text-transparent "
                         >
                             15
-                        </h1>
+                        </h3>
                         <h3 className="font-['Wix_Madefor_Text'] leading-none font-bold ">
                             лет — опыт работы топ-менеджеров компании в разработке
                         </h3>
                     </div>
                     <div>
-                        <h1
+                        <h3
                             className="text-7xl 
                            font-bold bg-gradient-to-br
                            from-[#8B61E5] to-[#6720FF] 
                            bg-clip-text text-transparent "
                         >
                             5
-                        </h1>
+                        </h3>
                         <h3 className="font-['Wix_Madefor_Text'] leading-none font-bold ">
                             лет на рынке разработки
                         </h3>
                     </div>
                     <div>
-                        <h1
+                        <h3
                             className="text-7xl 
                            font-bold bg-gradient-to-br
                            from-[#6CA7FF] to-[#2D41F9] 
                            bg-clip-text text-transparent "
                         >
                             90
-                        </h1>
+                        </h3>
                         <h3 className="font-['Wix_Madefor_Text'] leading-none font-bold ">
                             реализованных проектов
                         </h3>

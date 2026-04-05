@@ -20,7 +20,7 @@ export function HomeView({ awards }: HomeClientProps) {
             <OurProject awards={awards} />
             <OurCommand />
             <div className="!mt-[100px]">
-                <h1 className="text-center text-4xl font-bold !mb-12">Нам доверяют</h1>
+                <h2 className="text-center text-4xl font-bold !mb-12">Нам доверяют</h2>
                 <OrdersCarousel awards={awards} />
             </div>
             <ContactsBanner />

@@ -20,9 +20,9 @@ export function BannerBlock() {
                     </div>
                     <div className="text-white flex bg-black gap-5 !py-2.5 !px-5 w-[32%] rounded-[36px] items-center rotate-[355deg]">
                         <div>
-                            <h1 className="text-[37px] font-bold !my-[-12px] bg-gradient-to-r from-[#2d41f9] to-[#9acbff] bg-clip-text text-transparent ">
+                            <h3 className="text-[37px] font-bold !my-[-12px] bg-gradient-to-r from-[#2d41f9] to-[#9acbff] bg-clip-text text-transparent ">
                                 23
-                            </h1>
+                            </h3>
                             <h3>место</h3>
                         </div>
                         <h4>Разработка решений на базе ИИ</h4>

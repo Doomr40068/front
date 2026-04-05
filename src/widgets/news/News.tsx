@@ -8,7 +8,7 @@ export function News() {
                         <div className="rounded-4xl bg-gray-200 w-full h-[200px] flex items-center justify-center text-gray-400">
                             📷 Изображение новости
                         </div>
-                        <h1 className="font-bold text-3xl ">title!!!</h1>
+                        <h3 className="font-bold text-3xl ">title!!!</h3>
                         <h3 className="font-['Wix_Madefor_Text'] text-[18px]">description</h3>
                     </div>
                     <div className="flex gap-4 items-center">

@@ -4,12 +4,9 @@ import type { AwardResponse, Award } from '../model/types';
 class AwardApi {
     async getAwards(): Promise<Award[]> {
         try {
-            console.log('📢 Calling getAwards()');
             const response = await apiclient.get<AwardResponse>('/api/awards');
-            console.log('📦 API Response:', response);
-            console.log('🏆 Awards array:', response.data?.awards);
             return response.data.awards;
-        } catch(err) {
+        } catch (err) {
             console.error('Failed to fetch awards:', err);
             throw err;
         }
