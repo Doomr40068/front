@@ -3,6 +3,7 @@ import { Unbounded } from 'next/font/google';
 import './globals.css';
 import Header from '@/widgets/header';
 import Footer from '../widgets/footer/footer';
+import { contactAPI } from '@/entities/contact/api/contacts-api';
 
 const unboundedSemiBold = Unbounded({
     subsets: ['latin', 'cyrillic'],
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
     description: 'Сайт от студента',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const contacts = await contactAPI.getContact();
     return (
         <html lang="en" className={unboundedSemiBold.className}>
             <body className="!p-5">
-                <Header />
+                <Header contacts={contacts} />
                 {children}
-                <Footer />
+                <Footer contacts={contacts} />
             </body>
         </html>
     );

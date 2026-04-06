@@ -8,5 +8,5 @@ export interface Author {
 
 export interface AuthorsResponse {
     message: string;
-    data: Author;
+    data: Author[];
 }

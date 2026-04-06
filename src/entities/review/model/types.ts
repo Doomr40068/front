@@ -1,8 +1,17 @@
 import type { Image, Pagination } from '@/shared/types/common';
 
-export interface Project {
+export interface Review {
     id: number;
-    slug: string;
+    fio: string;
+    position: string;
+    content: string;
+    document: string;
+    image: Image;
+    project: ProjectReview;
+}
+
+export interface ProjectReview {
+    id: number;
     title: string;
     description: string;
     price: number;
@@ -12,30 +21,12 @@ export interface Project {
     video_cover: Image;
     link: string;
     is_big: boolean;
-    is_case: boolean;
 }
 
-export interface ProjectListForSitemap {
-    slug: string;
-    lastmod: number;
-}
-
-export interface ProjectCategory {
-    id: number;
-    name: string;
-}
-
-export interface ProjectCategoryResponse {
-    message: string;
-    data: {
-        tags: ProjectCategory[];
-    };
-}
-
-export interface ProjectResponse {
+export interface ReviewResponse {
     message: string;
     data: {
         pagination: Pagination;
-        items: Project[];
+        items: Review[];
     };
 }

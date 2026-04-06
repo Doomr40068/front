@@ -3,13 +3,8 @@ import type { AwardResponse, Award } from '../model/types';
 
 class AwardApi {
     async getAwards(): Promise<Award[]> {
-        try {
-            const response = await apiclient.get<AwardResponse>('/api/awards');
-            return response.data.awards;
-        } catch (err) {
-            console.error('Failed to fetch awards:', err);
-            throw err;
-        }
+        const response = await apiclient.get<AwardResponse>('/api/awards');
+        return response.data.awards;
     }
 }
 

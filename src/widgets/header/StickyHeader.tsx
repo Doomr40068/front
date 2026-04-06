@@ -1,11 +1,16 @@
 import { RiTelegramLine } from 'react-icons/ri';
 import { BiLogoVk } from 'react-icons/bi';
+import { Contacts } from '@/entities/contact/model/types';
+import { FaWhatsapp } from 'react-icons/fa6';
 
 interface StickyHeaderProps {
     show: boolean;
+    contacts: Contacts[];
 }
 
-export function StickyHeader({ show }: StickyHeaderProps) {
+export function StickyHeader({ show, contacts }: StickyHeaderProps) {
+    const contactsMap = Object.fromEntries(contacts.map((item) => [item.kay, item.value]));
+
     return (
         <div
             className={`
@@ -42,10 +47,13 @@ export function StickyHeader({ show }: StickyHeaderProps) {
                 </ul>
 
                 <ul className="flex space-x-3 text-2xl Icons">
-                    <a href="https://web.telegram.org/a/" aria-label="Telegram">
+                    <a href={contactsMap.telegram} aria-label="Telegram">
                         <RiTelegramLine className="fill-white transition-all duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
                     </a>
-                    <a href="https://vk.com" aria-label="VK">
+                    <a href={contactsMap.whatsapp} aria-label="Whatsapp">
+                        <FaWhatsapp className="fill-white transition-all duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
+                    </a>
+                    <a href={contactsMap.vk} aria-label="VK">
                         <BiLogoVk className="fill-white transition-all duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
                     </a>
                 </ul>

@@ -1,7 +1,15 @@
 import { RiTelegramLine } from 'react-icons/ri';
 import { BiLogoVk } from 'react-icons/bi';
+import { Contacts } from '@/entities/contact/model/types';
+import { FaWhatsapp } from 'react-icons/fa6';
 
-export function MainHeader() {
+interface ContactsProps {
+    contacts: Contacts[];
+}
+
+export function MainHeader({ contacts }: ContactsProps) {
+    const contactsMap = Object.fromEntries(contacts.map((item) => [item.kay, item.value]));
+
     return (
         <header className="flex items-center justify-between !p-5 !mb-5 font-semibold  ">
             <h1 className="text-2xl font-bold">LOGO</h1>
@@ -40,10 +48,13 @@ export function MainHeader() {
                         </linearGradient>
                     </defs>
                 </svg>
-                <a href="https://web.telegram.org/a/" aria-label="Telegram">
+                <a href={contactsMap.telegram} aria-label="Telegram">
                     <RiTelegramLine className="fill-black transition-all duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
                 </a>
-                <a href="https://vk.com" aria-label="VK">
+                <a href={contactsMap.whatsapp} aria-label="Whatsapp">
+                    <FaWhatsapp className="fill-black transition-all duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
+                </a>
+                <a href={contactsMap.vk} aria-label="VK">
                     <BiLogoVk className="fill-black transition-all duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
                 </a>
             </ul>

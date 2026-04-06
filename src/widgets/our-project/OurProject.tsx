@@ -1,12 +1,12 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/shared/ui/tabs/tabs';
-import type { Award } from '@/entities/award/model/types';
+import { Project } from '@/entities/projects/model/types';
 import Image from 'next/image';
 
-interface AwardsCompanyProps {
-    awards: Award[];
+interface ProjectProps {
+    projects: Project[];
 }
 
-export function OurProject({ awards }: AwardsCompanyProps) {
+export function OurProject({ projects }: ProjectProps) {
     return (
         <div className="flex flex-col items-center mb-30">
             <h1 className="text-center text-[40px] font-bold !mb-12 "> Наши проекты </h1>
@@ -114,32 +114,14 @@ export function OurProject({ awards }: AwardsCompanyProps) {
 
                 <TabsContent value="webservices" className="mt-6">
                     <div className="flex gap-10 h-400 items-center">
-                        <div className="flex flex-col gap-3">
-                            {awards &&
-                                awards.map((el) => (
+                        <div className="grid grid-col-2 gap-5">
+                            {projects &&
+                                projects.map((el) => (
                                     <div key={el?.id} className="flex flex-col gap-4">
                                         <Image
                                             className="h-70 rounded-4xl"
-                                            src={el.award_icon.original_url}
-                                            alt={el.title || 'award'}
-                                            width={300}
-                                            height={280}
-                                        />
-                                        <div>
-                                            <h1 className="font-bold">{el?.title}</h1>
-                                            <h3 className="">{el?.description}</h3>
-                                        </div>
-                                    </div>
-                                ))}
-                        </div>
-                        <div className="h-4/5 items-center flex flex-col gap-3 justify-center overflow-y-auto no-scrollbar">
-                            {awards &&
-                                awards.map((el) => (
-                                    <div key={el?.id} className="flex flex-col gap-4">
-                                        <Image
-                                            className="h-70 rounded-4xl"
-                                            src={el.award_icon.original_url}
-                                            alt={el.title || 'award'}
+                                            src={el.image.original_url}
+                                            alt={el.title || 'Project'}
                                             width={300}
                                             height={280}
                                         />
