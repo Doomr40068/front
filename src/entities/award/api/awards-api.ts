@@ -11,11 +11,6 @@ class AwardApi {
             throw err;
         }
     }
-
-    async getAwardById(id: string): Promise<Award> {
-        const response = await apiclient.get<{ data: Award }>(`/api/awards/${id}`);
-        return response.data;
-    }
 }
 
 export const awardAPI = new AwardApi();
