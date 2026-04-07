@@ -22,7 +22,7 @@ export function StickyHeader({ show, contacts }: StickyHeaderProps) {
             <header className="bg-[#0B0D20] rounded-b-[15px] text-white flex items-center justify-between !p-5">
                 <h1 className="text-xl font-bold">LOGO</h1>
 
-                <ul className="flex space-x-4 text-sm">
+                <ul className="flex space-x-4 text-sm gap-2.5 ">
                     <li className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
                         Проекты
                     </li>
@@ -46,7 +46,7 @@ export function StickyHeader({ show, contacts }: StickyHeaderProps) {
                     </li>
                 </ul>
 
-                <ul className="flex space-x-3 text-2xl Icons">
+                <ul className="flex text-2xl gap-2 Icons">
                     <a href={contactsMap.telegram} aria-label="Telegram">
                         <RiTelegramLine className="fill-white transition-all duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
                     </a>

@@ -11,10 +11,10 @@ export function MainHeader({ contacts }: ContactsProps) {
     const contactsMap = Object.fromEntries(contacts.map((item) => [item.kay, item.value]));
 
     return (
-        <header className="flex items-center justify-between !p-5 !mb-5 font-semibold  ">
+        <header className="flex items-center justify-between !px-5 !mb-5 font-semibold  ">
             <h1 className="text-2xl font-bold">LOGO</h1>
 
-            <ul className="flex space-x-4 gap-1 ">
+            <ul className="flex space-x-4 gap-2.5 ">
                 <li className="hover:bg-gradient-to-r hover:from-[#2D41F9] hover:via-[#9E70FF] hover:to-[#36CFFF] hover:bg-clip-text hover:text-transparent cursor-pointer">
                     Проекты
                 </li>
@@ -38,7 +38,7 @@ export function MainHeader({ contacts }: ContactsProps) {
                 </li>
             </ul>
 
-            <ul className="flex space-x-3 text-3xl Icons">
+            <ul className="flex gap-2 text-3xl Icons">
                 <svg width="0" height="0" style={{ position: 'absolute' }}>
                     <defs>
                         <linearGradient id="telegram-gradient" x1="0%" y1="0%" x2="100%" y2="0%">

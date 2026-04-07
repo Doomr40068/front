@@ -11,7 +11,7 @@ export function OurProject({ projects }: ProjectProps) {
         <div className="flex flex-col items-center mb-30">
             <h1 className="text-center text-[40px] font-bold !mb-12 "> Наши проекты </h1>
             <Tabs defaultValue="webservices" className="w-full">
-                <TabsList className="flex font-['Wix_Madefor_Text'] text-[15px] flex-nowrap w-4/5 gap-3 bg-transparent  overflow-x-auto overflow-y-hidden no-scrollbar">
+                <TabsList className="font-['Wix_Madefor_Text'] text-[15px] gap-3 bg-transparent flex flex-nowrap w-full overflow-x-auto">
                     <TabsTrigger
                         value="webservices"
                         className="
@@ -113,13 +113,13 @@ export function OurProject({ projects }: ProjectProps) {
                 </TabsList>
 
                 <TabsContent value="webservices" className="mt-6">
-                    <div className="flex gap-10 h-400 items-center">
-                        <div className="grid grid-col-2 gap-5">
+                    <div className="flex gap-10 items-center">
+                        <div className="grid grid-cols-2 gap-5">
                             {projects &&
                                 projects.map((el) => (
                                     <div key={el?.id} className="flex flex-col gap-4">
                                         <Image
-                                            className="h-70 rounded-4xl"
+                                            className="rounded-4xl"
                                             src={el.image.original_url}
                                             alt={el.title || 'Project'}
                                             width={300}

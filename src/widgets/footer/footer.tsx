@@ -18,7 +18,7 @@ function Footer({ contacts }: ContactsProps) {
     const contactsMap = Object.fromEntries(contacts.map((item) => [item.kay, item.value]));
 
     return (
-        <footer className={wixMadefor.className}>
+        <footer className=" flex justify-between w-full !mt-7 !mx-2.5 font-['Wix_Madefor_Text']">
             <div className="flex flex-col justify-between">
                 <h1 className="px-5 py-2.5">LOGO</h1>
                 <h6 className="w-[70%] text-[16px] mb-2.5 ">

@@ -1,39 +1,29 @@
 class ApiClient {
-    private baseUrl: string;
+    private baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
-    constructor() {
-        this.baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-    }
+    private async request<T>(url: string, options?: RequestInit): Promise<T> {
+        const res = await fetch(`${this.baseUrl}${url}`, options);
 
-    private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
-        const url = `${this.baseUrl}${endpoint}`;
-
-        try {
-            const response = await fetch(url, {
-                headers: { 'Content-Type': 'application/json' },
-                ...options,
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.error(`❌ API Error [${endpoint}]:`, error);
-            throw error;
+        if (!res.ok) {
+            throw new Error(`HTTP error: ${res.status}`);
         }
+
+        return res.json();
     }
 
-    get<T>(endpoint: string): Promise<T> {
-        return this.request<T>(endpoint);
-    }
+    get<T>(endpoint: string, params?: Record<string, string | number>): Promise<T> {
+        let url = endpoint;
 
-    post<T>(endpoint: string, body: unknown): Promise<T> {
-        return this.request<T>(endpoint, {
-            method: 'POST',
-            body: JSON.stringify(body),
+        if (params) {
+            const query = new URLSearchParams(
+                Object.entries(params).map(([k, v]) => [k, String(v)])
+            ).toString();
+
+            url += `?${query}`;
+        }
+
+        return this.request<T>(url, {
+            method: 'GET',
         });
     }
 }

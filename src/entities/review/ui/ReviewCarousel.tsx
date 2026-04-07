@@ -31,30 +31,32 @@ export function OrdersCarousel({ review = [] }: ReviewCarouselProps) {
                 {review.map((item) => (
                     <CarouselItem key={item.id} className="basis-1/2 lg:basis-1/3">
                         <div className="p-1">
-                            <Card className="bg-[#EDEEFF] !h-[352px] !mx-5 ">
-                                <CardContent className="flex flex-col aspect-square items-center justify-center !p-6">
-                                    <div className=" w-full flex justify-between h-[20%] ">
-                                        <h3 className="w-[50%]">{item.project.title}</h3>
+                            <Card className="bg-[#EDEEFF]  !p-8 !mx-5 ">
+                                <CardContent className="flex !h-[300px] flex-col items-center justify-center">
+                                    <div className=" w-full flex justify-between !mb-5">
+                                        <h3 className="text-[20px] font-bold w-3/5 ">
+                                            {item.project.title}
+                                        </h3>
                                         <button
                                             aria-label="Переход на проект"
-                                            className="h-10 bg-black rounded-full w-10"
+                                            className=" h-15 w-15 text-2xl bg-black !p-2.5 rounded-full"
                                         >
                                             📃
                                         </button>
                                     </div>
-                                    <div className="bg-white !p-4 h-[60%] w-full ">
-                                        <h3 className="text-[16px] font-['Wix_Madefor_Text'] font-semibold">
+                                    <div className="bg-white rounded-3xl flex flex-col justify-between !p-4 h-full w-full ">
+                                        <h3 className="text-[22px] font-['Wix_Madefor_Text'] font-semibold">
                                             {item.content}
                                         </h3>
                                         <div className="flex items-center gap-2">
                                             <Image
-                                                className="rounded-full max-w-8 max-h-8 object-cover "
+                                                className="!w-[50px] !h-[50px] text-black rounded-full object-cover"
                                                 src={item.image?.original_url}
                                                 alt="Ava"
-                                                width={40}
-                                                height={40}
+                                                width={100}
+                                                height={100}
                                             />
-                                            <div className="leading-1">
+                                            <div className="leading-4">
                                                 <h3 className="font-semibold text-[16px] text-[#2D41F9]">
                                                     {item.fio}
                                                 </h3>
