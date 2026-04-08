@@ -1,10 +1,10 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { Contact } from './types';
+import { Contacts } from './types';
 import { contactAPI } from '../api/contacts-api';
 
-export function useProject() {
-    const [projects, setProjects] = useState<Contact[]>([]);
+export function useContact() {
+    const [projects, setProjects] = useState<Contacts[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 

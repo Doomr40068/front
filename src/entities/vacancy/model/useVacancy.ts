@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Vacancy } from './types';
 import { vacancyAPI } from '../api/vacancyes-api';
 
-export function useProject() {
+export function useVacancy() {
     const [projects, setProjects] = useState<Vacancy[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);

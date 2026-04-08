@@ -1,11 +1,15 @@
 class ApiClient {
-    private baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+    // Теперь baseUrl указывает на Next.js, а не на Laravel
+    private baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
     private async request<T>(url: string, options?: RequestInit): Promise<T> {
-        const res = await fetch(`${this.baseUrl}${url}`, options);
+        const fullUrl = `${this.baseUrl}${url}`;
+        console.log('🌐 Fetching через Next.js proxy:', fullUrl); // ← добавь этот лог
+
+        const res = await fetch(fullUrl, options);
 
         if (!res.ok) {
-            throw new Error(`HTTP error: ${res.status}`);
+            throw new Error(`HTTP error: ${res.status} ${res.statusText}`);
         }
 
         return res.json();

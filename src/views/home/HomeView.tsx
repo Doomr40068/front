@@ -13,17 +13,16 @@ import { Posts } from '@/entities/post/model/types';
 
 interface HomeClientProps {
     awards: Award[];
-    projects: Project[];
     review: Review[];
     news: Posts[];
 }
 
-export function HomeView({ awards, projects, review, news }: HomeClientProps) {
+export function HomeView({ awards, review, news }: HomeClientProps) {
     return (
         <main>
             <BannerBlock />
             <AwardsCompany awards={awards} />
-            <OurProject projects={projects} />
+            <OurProject />
             <OurCommand />
             <div className="!mt-[100px]">
                 <h2 className="text-center text-4xl font-bold !mb-12">Нам доверяют</h2>

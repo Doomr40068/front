@@ -8,13 +8,13 @@ interface AwardsCompanyProps {
 export function AwardsCompany({ awards }: AwardsCompanyProps) {
     return (
         <div>
-            <h1 className="text-center text-[40px] font-bold mb-12 ">Награды студии</h1>
-            <div className="grid grid-cols-3 gap-10">
+            <h1 className="text-center text-[40px] font-bold !mb-12 ">Награды студии</h1>
+            <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
                 {awards &&
                     awards.map((el) => (
                         <div key={el?.id} className="flex mb-5 gap-5">
                             <Image
-                                className="w-[100] h-[100] rounded-[50%] object-cover"
+                                className="w-[100] h-[100] rounded-full object-cover"
                                 src={el?.award_icon.original_url}
                                 alt="award"
                                 width={100}

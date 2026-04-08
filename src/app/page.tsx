@@ -9,5 +9,5 @@ export default async function HomePage() {
     const posts = await postsAPI.getPosts();
     const projects = await projectAPI.getProjects();
     const review = await reviewAPI.getReview();
-    return <HomeView awards={awards} projects={projects} review={review} news={posts} />;
+    return <HomeView awards={awards} review={review} news={posts} />;
 }

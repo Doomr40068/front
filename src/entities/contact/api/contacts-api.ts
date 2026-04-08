@@ -1,8 +1,8 @@
 import { apiclient } from '@/shared/api/api-client';
-import { Contact, ContactsResponse } from '../model/types';
+import { Contacts, ContactsResponse } from '../model/types';
 
 class ContactApi {
-    async getContact(): Promise<Contact[]> {
+    async getContact(): Promise<Contacts[]> {
         const request = await apiclient.get<ContactsResponse>('/api/contacts');
         return request.data;
     }

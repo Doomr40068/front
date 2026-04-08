@@ -1,13 +1,13 @@
 'use client';
 
-import { Card, CardContent } from '@/shared/ui/card/card';
+import { Card, CardContent } from '@/components/ui/card/card';
 import {
     Carousel,
     CarouselContent,
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
-} from '@/shared/ui/carousel/carousel';
+} from '@/components/ui/carousel/carousel';
 import Image from 'next/image';
 import { Review } from '../model/types';
 
@@ -29,12 +29,12 @@ export function OrdersCarousel({ review = [] }: ReviewCarouselProps) {
         >
             <CarouselContent>
                 {review.map((item) => (
-                    <CarouselItem key={item.id} className="basis-1/2 lg:basis-1/3">
+                    <CarouselItem key={item.id} className="basis-[100%] lg:basis-1/3">
                         <div className="p-1">
-                            <Card className="bg-[#EDEEFF]  !p-8 !mx-5 ">
-                                <CardContent className="flex !h-[300px] flex-col items-center justify-center">
+                            <Card className="bg-[#EDEEFF] !p-8 !mx-5 ">
+                                <CardContent className="flex h-[350px] flex-col items-center justify-center">
                                     <div className=" w-full flex justify-between !mb-5">
-                                        <h3 className="text-[20px] font-bold w-3/5 ">
+                                        <h3 className="text-[20px]  font-bold w-3/5 ">
                                             {item.project.title}
                                         </h3>
                                         <button
@@ -72,8 +72,6 @@ export function OrdersCarousel({ review = [] }: ReviewCarouselProps) {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious className="!bg-[#EDEEFF]" />
-            <CarouselNext className="!bg-[#EDEEFF]" />
         </Carousel>
     );
 }

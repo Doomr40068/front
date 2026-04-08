@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Review } from './types';
 import { reviewAPI } from '../api/review-api';
 
-export function useProject() {
+export function useReview() {
     const [projects, setProjects] = useState<Review[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);

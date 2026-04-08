@@ -1,41 +1,67 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { projectAPI } from '../api/projects-api';
+import { useState, useEffect, useCallback } from 'react';
 import { Project } from './types';
-import { Pagination } from '@/shared/types/common';
+import { projectAPI } from '../api/projects-api';
 
-export function useProject() {
+export function useProjects() {
     const [projects, setProjects] = useState<Project[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [lastPage, setLastPage] = useState(1);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isInitialLoading, setIsInitialLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    const [page, setPage] = useState(1);
-    const [lastPage, setLastPage] = useState(1);
+    const fetchProjects = useCallback(async (page: number, shouldConcat: boolean = false) => {
+        console.log('🔄 Начинаем загрузку страницы:', page);
+        console.log('🔄 Конкатенировать?', shouldConcat);
 
-    const fetchProjects = async (pageToLoad: number) => {
         try {
             setIsLoading(true);
-            const res = await projectAPI.getProjects(pageToLoad);
-            setProjects((prev) => [...prev, ...res.data]);
-            setLastPage(res.pagination.last_page);
+            setError(null);
+
+            const response = await projectAPI.getProjectsPaginated(page, 4);
+            console.log('✅ Получены данные:', response);
+            console.log('✅ Количество проектов:', response.data.items.length);
+
+            const newProjects = response.data.items;
+            const pagination = response.data.pagination;
+
+            if (shouldConcat) {
+                setProjects((prev) => [...prev, ...newProjects]);
+            } else {
+                setProjects(newProjects);
+            }
+
+            setLastPage(pagination.last_page);
+            setCurrentPage(page);
         } catch (err) {
-            setError('Failed');
+            setError('Не удалось загрузить проекты');
+            console.error('Error fetching projects:', err);
+            console.log('❌ Ошибка:', err);
         } finally {
             setIsLoading(false);
+            setIsInitialLoading(false);
         }
-    };
-
-    useEffect(() => {
-        fetchProjects(1);
     }, []);
 
-    const loadMore = () => {
-        if (page >= lastPage) return;
+    useEffect(() => {
+        fetchProjects(1, false);
+    }, [fetchProjects]);
 
-        const nextPage = page + 1;
-        setPage(nextPage);
-        fetchProjects(nextPage);
+    const loadMore = useCallback(() => {
+        if (!isLoading && currentPage < lastPage) {
+            const nextPage = currentPage + 1;
+            fetchProjects(nextPage, true);
+        }
+    }, [currentPage, lastPage, isLoading, fetchProjects]);
+
+    return {
+        projects,
+        loadMore,
+        hasMore: currentPage < lastPage,
+        isLoading: isLoading || isInitialLoading,
+        error,
+        currentPage,
+        lastPage,
     };
-
-    return { projects, isLoading, error, loadMore, hasMore: page < lastPage };
 }

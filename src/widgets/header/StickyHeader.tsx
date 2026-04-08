@@ -2,6 +2,18 @@ import { RiTelegramLine } from 'react-icons/ri';
 import { BiLogoVk } from 'react-icons/bi';
 import { Contacts } from '@/entities/contact/model/types';
 import { FaWhatsapp } from 'react-icons/fa6';
+import { Menu } from 'lucide-react';
+import {
+    Sheet,
+    SheetClose,
+    SheetContent,
+    SheetDescription,
+    SheetFooter,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from '@/components/ui/sheet';
+import Link from 'next/link';
 
 interface StickyHeaderProps {
     show: boolean;
@@ -20,43 +32,132 @@ export function StickyHeader({ show, contacts }: StickyHeaderProps) {
       `}
         >
             <header className="bg-[#0B0D20] rounded-b-[15px] text-white flex items-center justify-between !p-5">
-                <h1 className="text-xl font-bold">LOGO</h1>
+                <h1 className="text-xl font-bold">КИБЕРИЯ</h1>
 
-                <ul className="flex space-x-4 text-sm gap-2.5 ">
-                    <li className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                <nav className="flex space-x-4 hidden md:flex text-sm gap-2.5 ">
+                    <Link
+                        className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent"
+                        href={''}
+                    >
                         Проекты
-                    </li>
-                    <li className=" text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                    </Link>
+                    <Link
+                        className=" text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent"
+                        href={''}
+                    >
                         Услуги
-                    </li>
-                    <li className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                    </Link>
+                    <Link
+                        className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent"
+                        href={''}
+                    >
                         О компании
-                    </li>
-                    <li className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                    </Link>
+                    <Link
+                        className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent"
+                        href={''}
+                    >
                         Карьера
-                    </li>
-                    <li className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                    </Link>
+                    <Link
+                        className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent"
+                        href={''}
+                    >
                         Блог
-                    </li>
-                    <li className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                    </Link>
+                    <Link
+                        className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent"
+                        href={''}
+                    >
                         Новости
-                    </li>
-                    <li className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent">
+                    </Link>
+                    <Link
+                        className="text-white hover:bg-gradient-to-r from-[#2d41f9] via-[#9e70ff] to-[#36cfff] bg-clip-text text-transparent"
+                        href={''}
+                    >
                         Контакты
-                    </li>
-                </ul>
+                    </Link>
+                </nav>
 
-                <ul className="flex text-2xl gap-2 Icons">
-                    <a href={contactsMap.telegram} aria-label="Telegram">
+                <ul className="hidden md:flex items-center gap-2.5 text-2xl">
+                    <a href={contactsMap.telegram} target="_blank" aria-label="Telegram">
                         <RiTelegramLine className="fill-white transition-all duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
                     </a>
-                    <a href={contactsMap.whatsapp} aria-label="Whatsapp">
+                    <a href={contactsMap.whatsapp} target="_blank" aria-label="Whatsapp">
                         <FaWhatsapp className="fill-white transition-all duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
                     </a>
-                    <a href={contactsMap.vk} aria-label="VK">
+                    <a href={contactsMap.vk} target="_blank" aria-label="VK">
                         <BiLogoVk className="fill-white transition-all duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
                     </a>
                 </ul>
+
+                <Sheet>
+                    <SheetTrigger asChild>
+                        <button className="md:hidden p-2 -mr-2">
+                            <div className="flex gap-1.5">
+                                <a href={contactsMap.telegram} className="text-3xl" target="_blank">
+                                    <RiTelegramLine className="text-3xl fill-white " />
+                                </a>
+                                <Menu size={28} className="text-white" />
+                            </div>
+                        </button>
+                    </SheetTrigger>
+
+                    <SheetContent side="right" className="bg-[#2D41F9] !max-w-none !w-full">
+                        <div className="flex flex-col gap-8 mt-10">
+                            <div className="bg-white rounded-2xl mb-1.5 !mt-[36px] !mx-[15px] !p-5 ">
+                                <nav className="flex flex-col gap-6 text-lg font-medium">
+                                    <Link href="/projects" className="hover:text-blue-600">
+                                        Проекты
+                                    </Link>
+                                    <Link href="/services" className="hover:text-blue-600">
+                                        Услуги
+                                    </Link>
+                                    <Link href="/about" className="hover:text-blue-600">
+                                        О компании
+                                    </Link>
+                                    <Link href="/career" className="hover:text-blue-600">
+                                        Карьера
+                                    </Link>
+                                    <Link href="/blog" className="hover:text-blue-600">
+                                        Блог
+                                    </Link>
+                                    <Link href="/news" className="hover:text-blue-600">
+                                        Новости
+                                    </Link>
+                                    <Link href="/contacts" className="hover:text-blue-600">
+                                        Контакты
+                                    </Link>
+                                </nav>
+                            </div>
+
+                            <div className="flex rounded-2xl !p-6 !mx-[15px] bg-black flex-col gap-3 mb-1.5 ">
+                                <div>
+                                    <h4 className="text-2xl text-white font-bold">
+                                        {contactsMap.phone}
+                                    </h4>
+                                    <h4 className="text-2xl text-white font-bold">
+                                        {contactsMap.email}
+                                    </h4>
+                                </div>
+                                <div className="flex gap-1 text-3xl pt-6">
+                                    <a href={contactsMap.telegram} target="_blank">
+                                        <RiTelegramLine className="fill-white transition-all duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
+                                    </a>
+                                    <a href={contactsMap.whatsapp} target="_blank">
+                                        <FaWhatsapp className="fill-white transition-all duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
+                                    </a>
+                                    <a href={contactsMap.vk} target="_blank">
+                                        <BiLogoVk className="fill-white transition-all duration-1000 hover:fill-[url(#telegram-gradient)] hover:scale-110" />
+                                    </a>
+                                </div>
+                            </div>
+                            <button className="bg-[#9E70FF] text-white text-[18px] !px-[65px] !py-[19px] !mb-[36px] rounded-2xl">
+                                Обсудить проект
+                            </button>
+                        </div>
+                    </SheetContent>
+                </Sheet>
             </header>
         </div>
     );

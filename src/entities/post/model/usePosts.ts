@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Posts } from './types';
 import { postsAPI } from '../api/post-api';
 
-export function useProject() {
+export function usePosts() {
     const [projects, setProjects] = useState<Posts[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);

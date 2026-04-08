@@ -9,22 +9,22 @@ export function News({ news }: NewsProps) {
     return (
         <div className="bg-[#EDEEFF] !p-[30px] rounded-4xl flex flex-col items-center">
             <h1 className="text-center text-[40px] font-bold !mb-12 ">Новости</h1>
-            <div className="grid w-full gap-8 grid-cols-3">
+            <div className="grid w-full gap-8 lg:grid-cols-3 grid-cols-1">
                 {news.map((item) => (
                     <div
                         key={item.id}
-                        className="bg-white !p-5 rounded-4xl flex flex-col justify-between"
+                        className="bg-white !p-5 rounded-4xl gap-5 flex flex-col justify-between"
                     >
                         <div className="flex flex-col gap-[8px]">
                             <Image
-                                className="rounded-4xl"
+                                className="w-full rounded-4xl"
                                 src={item.image_preview}
                                 alt={item.title}
                                 width={388}
                                 height={240}
                             />
-                            <h3 className="font-bold !text-3xl ">{item.title}</h3>
-                            <h3 className="font-['Wix_Madefor_Text'] !text-[18px]">
+                            <h3 className="font-bold lg:text-3xl text-[22px]  ">{item.title}</h3>
+                            <h3 className="font-['Wix_Madefor_Text'] font-medium text-[18px]">
                                 {item.description}
                             </h3>
                         </div>

@@ -28,6 +28,7 @@ export interface ProjectCategory {
 export interface ProjectCategoryResponse {
     message: string;
     data: {
+        pagination: Pagination[];
         tags: ProjectCategory[];
     };
 }

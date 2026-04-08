@@ -1,15 +1,25 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/shared/ui/tabs/tabs';
-import { Project } from '@/entities/projects/model/types';
+'use client';
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs/tabs';
 import Image from 'next/image';
+import { ButtonMore } from '@/features/load-more-projects/ui/ButtonMore';
+import { useProjects } from '@/entities/projects/model/useProjects';
 
-interface ProjectProps {
-    projects: Project[];
-}
+export function OurProject() {
+    const { projects, loadMore, hasMore, isLoading, error } = useProjects();
 
-export function OurProject({ projects }: ProjectProps) {
+    if (error) {
+        return (
+            <div className="flex flex-col items-center mb-30">
+                <h1 className="text-center text-[40px] font-bold !mb-12">Наши проекты</h1>
+                <div className="text-red-500 text-center p-8">Ошибка: {error}</div>
+            </div>
+        );
+    }
+
     return (
         <div className="flex flex-col items-center mb-30">
-            <h1 className="text-center text-[40px] font-bold !mb-12 "> Наши проекты </h1>
+            <h1 className="text-center text-[40px] font-bold !mb-12"> Наши проекты </h1>
             <Tabs defaultValue="webservices" className="w-full">
                 <TabsList className="font-['Wix_Madefor_Text'] text-[15px] gap-3 bg-transparent flex flex-nowrap w-full overflow-x-auto">
                     <TabsTrigger
@@ -94,7 +104,7 @@ export function OurProject({ projects }: ProjectProps) {
                     transition-all duration-500
               "
                     >
-                        Логичекие сервисы
+                        Логические сервисы
                     </TabsTrigger>
                     <TabsTrigger
                         value="else_project"
@@ -113,50 +123,49 @@ export function OurProject({ projects }: ProjectProps) {
                 </TabsList>
 
                 <TabsContent value="webservices" className="mt-6">
-                    <div className="flex gap-10 items-center">
-                        <div className="grid grid-cols-2 gap-5">
-                            {projects &&
-                                projects.map((el) => (
-                                    <div key={el?.id} className="flex flex-col gap-4">
-                                        <Image
-                                            className="rounded-4xl"
-                                            src={el.image.original_url}
-                                            alt={el.title || 'Project'}
-                                            width={300}
-                                            height={280}
-                                        />
-                                        <div>
-                                            <h1 className="font-bold">{el?.title}</h1>
-                                            <h3 className="">{el?.description}</h3>
-                                        </div>
-                                    </div>
-                                ))}
-                        </div>
+                    <div className="grid grid-cols-2 gap-5">
+                        {projects.map((el) => (
+                            <div key={el.id} className="flex flex-col gap-4">
+                                <Image
+                                    className="rounded-4xl w-full h-auto object-cover"
+                                    src={el.image?.original_url}
+                                    alt={el.title || 'Project'}
+                                    width={300}
+                                    height={280}
+                                    loading="lazy"
+                                />
+                                <div>
+                                    <h1 className="font-bold text-xl">{el.title}</h1>
+                                    <h3 className="text-gray-600">{el.description}</h3>
+                                </div>
+                            </div>
+                        ))}
                     </div>
+
+                    <ButtonMore onClick={loadMore} isLoading={isLoading} hasMore={hasMore} />
                 </TabsContent>
 
                 <TabsContent value="crm" className="mt-6">
-                    <div>Контент CRM</div>
+                    <div className="text-center p-8">Контент CRM скоро появится</div>
                 </TabsContent>
-
                 <TabsContent value="eshop" className="mt-6">
-                    <div>Контент магазинов</div>
+                    <div className="text-center p-8">Контент магазинов скоро появится</div>
                 </TabsContent>
-
                 <TabsContent value="corporate" className="mt-6">
-                    <div>Контент корпоративных сайтов</div>
+                    <div className="text-center p-8">
+                        Контент корпоративных сайтов скоро появится
+                    </div>
                 </TabsContent>
                 <TabsContent value="marketplace" className="mt-6">
-                    <div>OZON</div>
+                    <div className="text-center p-8">OZON и другие маркетплейсы скоро появятся</div>
                 </TabsContent>
                 <TabsContent value="logic" className="mt-6">
-                    <div>Логичекие сервисы</div>
+                    <div className="text-center p-8">Логические сервисы скоро появятся</div>
                 </TabsContent>
                 <TabsContent value="else_project" className="mt-6">
-                    <div>Другие наши проекты</div>
+                    <div className="text-center p-8">Другие наши проекты скоро появятся</div>
                 </TabsContent>
             </Tabs>
-            <button className="text-white !px-10 !py-5 !text-2xl">Загрузить ещё</button>
         </div>
     );
 }

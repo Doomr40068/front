@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Tag } from './types';
 import { tagAPI } from '../api/tag-api';
 
-export function useProject() {
+export function useTag() {
     const [projects, setProjects] = useState<Tag[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
